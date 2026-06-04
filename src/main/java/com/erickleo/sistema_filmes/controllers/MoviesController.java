@@ -44,7 +44,7 @@ public class MoviesController {
         return moviesService.findAll();
     }
 
-    @DeleteMapping("/deletarFilme/{id}")
+    @DeleteMapping("/{id}")
     public String deleteMovie(@Valid @PathVariable UUID id) {
         return moviesService.deleteMovie(id);
     }
