@@ -4,6 +4,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Estágio 2: Execução
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jre-alpine
 COPY --from=build /target/sistema_filmes-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
